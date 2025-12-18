@@ -8,4 +8,18 @@ dotnet run
 ```
 
 # Debug
-F5 | C# |
+Create .vscode/launch.json:
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: AspNetApp10 Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/AspNetApp10.csproj"
+        }
+    ]
+}
+```
+

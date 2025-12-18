@@ -1,0 +1,23 @@
+@page
+@model PingModel
+<h2>Ping Test</h2>
+
+<button id="pingButton">Ping API</button>
+<p id="pingResult"></p>
+
+<script>
+    document.getElementById("pingButton").addEventListener("click", async () => {
+        try {
+            const response = await fetch("/api/ping");
+            const text = await response.text();
+            document.getElementById("pingResult").innerText = text;
+        } catch (err) {
+            document.getElementById("pingResult").innerText = "Error: " + err;
+        }
+    });
+</script>
+
+<form method="post">
+    <button type="submit" asp-page-handler="PingApi">Ping via C#</button>
+</form>
+<p>@Model.PingResult</p>
