@@ -3,6 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddHttpClient();
 builder.Services.AddControllers();
+builder.Services.AddOpenApi();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
@@ -26,5 +27,7 @@ app.MapRazorPages()
    .WithStaticAssets();
 
 app.MapControllers();
+
+if (app.Environment.IsDevelopment()) { app.MapOpenApi(); }
 
 app.Run();

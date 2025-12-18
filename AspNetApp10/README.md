@@ -22,4 +22,7 @@ Create .vscode/launch.json:
     ]
 }
 ```
-
+# Add Open Api
+```
+dotnet add package Microsoft.AspNetCore.OpenApi
+```
