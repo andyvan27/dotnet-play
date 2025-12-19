@@ -1,11 +1,26 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "C#: AspNetApp10 Debug",
-            "type": "dotnet",
-            "request": "launch",
-            "projectPath": "${workspaceFolder}/AspNetApp10.csproj"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch AspNetApp10",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/AspNetApp10/bin/Debug/net10.0/AspNetApp10.dll",
+      "cwd": "${workspaceFolder}/AspNetApp10",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug Tests (AspNetApp10.Tests)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/AspNetApp10.Tests/bin/Debug/net10.0/AspNetApp10.Tests.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/AspNetApp10.Tests",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    }
+  ]
 }
